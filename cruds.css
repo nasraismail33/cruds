@@ -33,7 +33,7 @@ input:focus{
     width: 20%;
 }
 #total{
-    background-color: blue;
+    background-color: rgb(8, 8, 226);
     border-radius: 7px;
     padding: 5px 2px;   
 }
