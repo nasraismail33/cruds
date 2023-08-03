@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS TEST</title>
+    <link href="cruds.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="cruds">
+        <div class="head">
+            <h2>cruds</h2>
+            <p>PRODUCT MANAGEMENT SYSTEm</p>
+        </div>
+
+
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title">
+            <div class="price">
+                <input type="number" onkeyup="getTotal()" id="price" placeholder="price">
+                <input type="number" onkeyup="getTotal()"  id="taxes" placeholder="taxes">
+                <input type="number" onkeyup="getTotal()" id="ads" placeholder="ads">
+                <input type="number" onkeyup="getTotal()"  id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category">
+            <button id="submit">create</button>
+        </div>
+
+
+        <div class="outputs">
+            <div class="searchblock">
+                <input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="search">
+                <div class="btnsearch">
+                    <button onclick="getsearchmood(this.id)" id="searchtitle"> Search By Title </button>
+                    <button onclick="getsearchmood(this.id)" id="searchcategory"> Search By Category</button>
+                </div>
+            </div>
+            <div id="deletAll">
+
+                
+            </div>
+
+
+        
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id="tbody">
+                      <tr>
+                        
+                    </tr>  
+                </tbody>
+                
+
+
+
+
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+        <div class="crud">
+            <div class="head">
+                <h2>cruds</h2>
+                <p> product management system</p>
+             </div> 
+        <input type=""  id=" " placeholder=" " >  
+        <div class="input">
+           <input type="text" id="title" placeholder="title">
+           <div class="price">
+           
+        
+                <input onkeyup="getTotal()"  type="number"  id="price" placeholder="price" >
+                <input onkeyup="getTotal()"  type="number" id="taxes" placeholder="taxes"  >
+                 <input onkeyup="getTotal()"  type="number"  id="ads" placeholder="ads" >
+                 <input onkeyup="getTotal()"  type="number"  id="discount" placeholder="discount" >
+                <small id="total"> </small>  
+           </div>
+          <input type="text"  id="count" placeholder="count" >
+           <input type="text"  id="category" placeholder="category" >
+           <button id="submit" >create</button> 
+        </div>
+        
+        
+        
+        <div class="outputs">
+        <div class="searchBlock">
+            <input onkeyup="searchdata(this.value)"  type="text" id="search" placeholder="search">
+            <div class="btnsearch">
+               <button onclick="getsearchmood(this.id)" id="searchtitle">Search By Title</button>
+               <button onclick="getsearchmood(this.id)"  id="searchCATEGORY">Search By Category</button>
+            </div>
+        </div>
+        
+        <div id="deleteAll">
+          
+        </div>
+        
+        <table>
+          <tr>
+            <th> id </th>
+            <th>title  </th>
+            <th> price </th>
+            <th> taxes </th>
+            <th>ads  </th>
+            <th> discount </th>
+            <th>total</th>
+            <th> category </th>
+            <th>update  </th>
+            <th> delete </th>
+          </tr>
+        
+       
+          <tbody id="tbody">
+            <tr>
+        
+            </tr>
+        
+        
+        
+          </tbody>
+        
+          
+        </table>
+        </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cruds test</title>
+    <link href="cruds.css" rel="stylesheet" >
+</head>
+<body>
+ <div class="cruds">
+    <div class="head">
+        <h2>cruds</h2>
+        <p>product management system</p>
+
+    </div>
+
+<div class="inputs">
+    <input  type="text" id="title" placeholder="title">
+    <div class="price">
+        <input  type="number" id="price" placeholder="price">
+        <input  type="number" id="taxes" placeholder="taxes">
+        <input  type="number" id="ads" placeholder="ads">
+        <input  type="number" id="discount" placeholder="discount">
+        <small id="total"></small>
+    </div>
+    <input  type="number" id="count" placeholder="count">
+    <input  type="text" id="category" placeholder="category">
+    <button id="submit">create</button>
+</div>
+
+
+<div class="outputs">
+    <div class="searchblock">
+        <input  type="text" id="search" placeholder="search">
+        <div class="btnsearch">
+            <button id="searchtitle">Search By Title </button>
+            <button id ="searchcategory"> Search By Category</button>
+        </div>
+    </div>
+<table>
+<tr>
+    <th>id</th>
+    <th>title</th>
+    <th>price</th>
+    <th>taxes</th>
+    <th>ads</th>
+    <th>discount</th>
+    <th>total</th>
+    <th>category</th>
+    <th>update</th>
+    <th>delete</th>
+    <th></th>
+ 
+</tr>
+<tr id="tbody">
+<td>1</td>
+<td>samsung</td>
+<td>55555</td>
+<td>435</td>
+<td>433</td>
+<td>65</td>
+<td>877</td>
+<td>6543</td>
+<td>3</td>
+<td>tv</td>
+<td><button>update</button></td>
+<td><button>delete</button></td>
+</tr>
+   
+
+
+
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS TEST</title>
+    <link href="index.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="cruds">
+        <div class="head">
+            <h2>cruds</h2>
+            <p>PRODUCT MANAGEMENT SYSTEm</p>
+        </div>
+
+
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title">
+            <div class="price">
+                <input type="number" onkeyup="getTotal()" id="price" placeholder="price">
+                <input type="number" onkeyup="getTotal()"  id="taxes" placeholder="taxes">
+                <input type="number" onkeyup="getTotal()" id="ads" placeholder="ads">
+                <input type="number" onkeyup="getTotal()"  id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category">
+            <button id="submit">create</button>
+        </div>
+
+
+        <div class="outputs">
+            <div class="searchblock">
+                <input onkeyup="searchdata(this.value)" type="text" id="search" placeholder="search">
+                <div class="btnsearch">
+                    <button onclick="getsearchmood(this.id)" id="searchtitle"> Search By Title </button>
+                    <button onclick="getsearchmood(this.id)" id="searchcategory"> Search By Category</button>
+                </div>
+            </div>
+            <div id="deletAll">
+
+                
+            </div>
+
+
+        
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id="tbody">
+                      <tr>
+                        <td>1 </td>
+                        <td> samsung</td>
+                        <td>4444 </td>
+                        <td> 44</td>
+                        <td> 44</td>
+                        <td>44 </td>
+                        <td>44 </td>
+                        <td> 4444</td>
+                        <td><button>update</button> </td>
+                        <td><button>delete</button> </td>
+                    </tr>  
+                </tbody>
+                
+
+
+
+
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <div class="crud">
+            <div class="head">
+                <h2>cruds</h2>
+                <p> product management system</p>
+             </div> 
+        <input type=""  id=" " placeholder=" " >  
+        <div class="input">
+           <input type="text" id="title" placeholder="title">
+           <div class="price">
+           
+        
+                <input onkeyup="getTotal()"  type="number"  id="price" placeholder="price" >
+                <input onkeyup="getTotal()"  type="number" id="taxes" placeholder="taxes"  >
+                 <input onkeyup="getTotal()"  type="number"  id="ads" placeholder="ads" >
+                 <input onkeyup="getTotal()"  type="number"  id="discount" placeholder="discount" >
+                <small id="total"> </small>  
+           </div>
+          <input type="text"  id="count" placeholder="count" >
+           <input type="text"  id="category" placeholder="category" >
+           <button id="submit" >create</button> 
+        </div>
+        
+        
+        
+        <div class="outputs">
+        <div class="searchBlock">
+            <input onkeyup="searchdata(this.value)"  type="text" id="search" placeholder="search">
+            <div class="btnsearch">
+               <button onclick="getsearchmood(this.id)" id="searchtitle">Search By Title</button>
+               <button onclick="getsearchmood(this.id)"  id="searchCATEGORY">Search By Category</button>
+            </div>
+        </div>
+        
+        <div id="deleteAll">
+          
+        </div>
+        
+        <table>
+          <tr>
+            <th> id </th>
+            <th>title  </th>
+            <th> price </th>
+            <th> taxes </th>
+            <th>ads  </th>
+            <th> discount </th>
+            <th>total</th>
+            <th> category </th>
+            <th>update  </th>
+            <th> delete </th>
+          </tr>
+        
+       
+          <tbody id="tbody">
+            <tr>
+        
+            </tr>
+        
+        
+        
+          </tbody>
+        
+          
+        </table>
+        </div>
+        </div>
+        
+        
+        
+        
+        
+              
+          <tbody id="tbody">
+            <tr>
+              <td>1 </td>
+              <td> samsung</td>
+              <td>2000 </td>
+              <td>100 </td>
+              <td>100 </td>
+              <td>100 </td>
+              <td>2100 </td>
+              <td>phone </td>
+              <td><button id="update">update</button> </td>
+              <td><button id="delete">delete</button> </td>
+            </tr>
+        
+        <tr>
+                <td>1 </td>
+                <td> samsung</td>
+                <td>2000 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>2100 </td>
+                <td>phone </td>
+                <td><button id="update">update</button> </td>
+                <td><button id="delete">delete</button> </td>
+              </tr>
+        
+              <tr>
+                <td>1 </td>
+                <td> samsung</td>
+                <td>2000 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>2100 </td>
+                <td>phone </td>
+                <td><button id="update">update</button> </td>
+                <td><button id="delete">delete</button> </td>
+              </tr>
+          
+              <tr>
+                <td>1 </td>
+                <td> samsung</td>
+                <td>2000 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>100 </td>
+                <td>2100 </td>
+                <td>phone </td>
+                <td><button id="update">update</button> </td>
+                <td><button id="delete">delete</button> </td>
+              </tr>
+
+
+               <script src="nona.js"></script>
+
+        
+            -->
+
+<!--
+<script src="index.js"></script>
+    </div>
+</body>
+</html>
+
+
+
+-->
+<script src="cruds.js" ></script>
+ </div> 
+</body>
+</html>
